@@ -1,0 +1,65 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi Chat</title>
+
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"> </script> 
+
+    <style type="text/css">
+<!--
+.Estilo1 {font-size: large}
+-->
+    </style>
+</head>
+  <body style="background:#F5F5F5;">
+    <div class="container">
+	  <div class="row">
+				
+				  <h1 align="left">Registrarse				
+					<img src="https://image.ibb.co/gWrVba/bot.png" width="15%" height="15%">				
+					<!--img src="https://preview.ibb.co/gX67NF/Imagen2.png" width="40%" height="40%"--></h1>
+					<div align="right"><b><a href="/" class="button is-primary is-outlined Estilo1">Ir a Inicio</a> </b>	                </div>
+		</div>
+					
+
+  {% from "_macro.html" import render_field %}
+        <div class="row">
+
+				<div class="col-md-12 jumbotron">
+                <form role="form" method="POST" action="/guardar_usuario">
+                  <dl>
+                  <div class="form-group">
+                    {{ render_field(form.username, class="form-control", placeholder="Escriba un nombre de usuario mínimo de 3 caracteres") }}
+                  </div>                                          
+                  <div class="form-group">
+                    {{ render_field(form.password, class="form-control", placeholder="Ingrese una contraseña de mas de 8 caracteres") }}                  
+                  </div>                       
+                  <div class="form-group">
+                    {{ render_field(form.password_2, class="form-control", placeholder="Repetir contraseña") }}                  
+                  </div>
+                  </dl>
+                  <button type="submit" class="btn btn-primary">Registrarse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+                <p>Version 1.0.0.</p>                                        
+            </div>
+        </div>
+        
+    </div>
+
+  </body>
+</html>
+{% endblock %}
