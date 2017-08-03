@@ -14,16 +14,11 @@
 	  
 	  	<style type="text/css">
 		<!--
-		.Estilo1 {font-size: 18px}
+		.Estilo2 {font-size: large}
 		-->
 		</style>
-		<style>
-          .est_img {
-            height: 150px;
-			margin: 2px 2px 0 0;
-          }
-        </style>
-    					
+		
+   					
 	<script type="text/javascript" charset="utf-8">
 	
        $(document).ready(function(){
@@ -42,62 +37,48 @@
             });
         });
     </script>
-	</head>	
+</head>	
 
 
  	<body style="background:#F5F5F5;">
-		<div class="container">
+
+		<div class="container">  
+		
+		
 			<div class="row">
 				<div class="col-md-8">
-					<h1>Diario BOT </h1>
-					<p>Sistema de conversación	</p>
-				</div>
-				<div class="col-md-4">
-					</br> 
-					<p align="right">Bienvenido(a):<b> {{username}} </b> |
-					<a href="/cerrar" class="button is-primary is-outlined">Cerrar Sesión</a>	|
-					<br><a href="/export" class="button is-primary is-outlined">Exportar conversacion</a></p>
+						<h1><img src="https://preview.ibb.co/gX67NF/Imagen2.png" width="40%" height="40%" alt="Bootstrap Image Preview">
+						<img src="https://image.ibb.co/gWrVba/bot.png" width="20%" height="20%"> </h1>
+						<h1 class="Estilo2">Sistema de conversación	</h1>
+				
+					</div>
+					<div class="col-md-4">
+						</br> 
+						<p align="right">Bienvenido(a):<b> {{username}} </b> |
+						<a href="/cerrar" class="button is-primary is-outlined">Cerrar Sesión</a>	|
+						<br><a href="/export" class="button is-primary is-outlined">Exportar conversacion</a></p>
+					
 				</div>
 			</div>
 	
-			<div class="row">
-				<div class="col-md-8" style="border:1px solid #E1E1E8;height:400px; width:100%;background:#fff;"> <p>
-					<div class="alert alert-success" id='nombre'>										</div>
+	
+			<div class="row">			
+			
+				<div class="col-md-4" style="border:1px solid #E1E1E8;height:400px; width:100%;overflow:scroll;background:#fff;"> <p>
+							<div class="alert alert-success" id='nombre'></div>
 				</div>
-				
 			</div>
 
 			<div class="row">
-				<div class="col-md-12;col-md-8">				
-					<form id="emit" method="post" action='#'>				
+				<form id="emit" method="post" action='#'>				
+					<div class="col-md-12" >			
 						<br><p align="center">
-						  <textarea  class="input" style="height:100px;width:650px;"  type="text" name="emit_data" id="emit_data" placeholder="Escribe tu mensaje"></textarea>												
-						  <button type="submit" style="height:100px;width:100px;" class="btn btn-success pull-right">Enviar</button></br>	
-						 	</p>
-				  	</form> 
-					</form>
-					
-					<!--input type="file"-->
-				 <form id="emit_imagen" action="#" method="post" enctype="multipart/form-data">
-					<input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" class="btn btn-success pull-right">
+						<textarea  class="input" style="height:80px;width:80%;"  type="text" name="emit_data" id="emit_data" placeholder="Escribe tu mensaje"></textarea> 						
+						    <button type="submit" style="height:40px;width:65px;" class="btn btn-success">Enviar</button> 
+						</p>
+					</div>
 				</form>
-											<script>		
-								$("input").change(function(e) {
-
-    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-        
-        var file = e.originalEvent.srcElement.files[i];
-        
-        var img = document.createElement("img");
-        var reader = new FileReader();
-        reader.onloadend = function() {
-             img.src = reader.result;
-        }
-        reader.readAsDataURL(file);
-        $("input").after(img);
-    						</script>
-							  
-				</div>
+					
 			</div>
 			
          

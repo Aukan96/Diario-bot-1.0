@@ -20,39 +20,32 @@
     </style>
 </head>
   <body style="background:#F5F5F5;">
-  {% from "_macro.html" import render_field %}
     <div class="container">
-		<div class="row">
-				<div class="col-md-12">
-				<div align="right" class="col-md-12"></br></br>
-					<span class="Estilo1"><b></b></span>
-				  <p align="right" class="control Estilo1"><b><a href="/" class="button is-primary is-outlined">Ir a Inicio
-				  </a> </b></p>				
-					</div>
-				</div>
+	  <div class="row">
+				
+				  <h1 align="left">Registrarse				
+					<img src="https://image.ibb.co/gWrVba/bot.png" width="15%" height="15%">				
+					<!--img src="https://preview.ibb.co/gX67NF/Imagen2.png" width="40%" height="40%"--></h1>
+					<div align="right"><b><a href="/" class="button is-primary is-outlined Estilo1">Ir a Inicio</a> </b>	                </div>
 		</div>
+					
 
+  {% from "_macro.html" import render_field %}
         <div class="row">
-                <h2>Registrarse</h2>
+
 				<div class="col-md-12 jumbotron">
                 <form role="form" method="POST" action="/guardar_usuario">
                   <dl>
                   <div class="form-group">
-                    {{ render_field(form.username, class="form-control", placeholder="Escriba su nombre de usuario") }}
-                  </div>
+                    {{ render_field(form.username, class="form-control", placeholder="Escriba un nombre de usuario mínimo de 3 caracteres") }}
+                  </div>                                          
                   <div class="form-group">
-                       {{ render_field(form.apellido, class="form-control", placeholder="Escriba su apellido") }}
-                  </div>                  
-                  <div class="form-group">
-                      {{ render_field(form.genero, class="form-control") }}                  
-                  </div>                          
-                  <div class="form-group">
-                    {{ render_field(form.password, class="form-control", placeholder="Ingrese una contraseña") }}                  
+                    {{ render_field(form.password, class="form-control", placeholder="Ingrese una contraseña de mas de 8 caracteres") }}                  
                   </div>                       
                   <div class="form-group">
                     {{ render_field(form.password_2, class="form-control", placeholder="Repetir contraseña") }}                  
                   </div>
-                    </dl>
+                  </dl>
                   <button type="submit" class="btn btn-primary">Registrarse</button>
                 </form>
             </div>
